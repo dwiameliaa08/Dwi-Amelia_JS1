@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwi Amelia-Web-B-Aft</title>
+</head>
+<body>
+<h2>JavaScript dengan If, Else, dan Nested If</h1>
+
+    <script>
+        // Mengkalkulasi umur untuk perizinan
+        var umur = 18;
+        var izin = false;
+
+        if (umur >= 18) {
+            document.write("<p>Anda cukup umur.</p>");
+
+            if (izin) {
+                document.write("<p>Anda memiliki izin.</p>");
+            } else {
+                document.write("<p>Anda tidak memiliki izin.</p>");
+            }
+        } else {
+            document.write("<p>Anda belum cukup umur.</p>");
+        }
+    </script>
+
+<h2> JavaScript dengan Switch Case</h1>
+
+    <script>
+        // Mengkalkulasi nilai
+        var nilaiHuruf = "A";
+        var keterangan;
+
+        switch (nilaiHuruf) {
+            case "A":
+                keterangan = "Sangat Baik";
+                break;
+            case "B":
+                keterangan = "Baik";
+                break;
+            case "C":
+                keterangan = "Cukup";
+                break;
+            case "D":
+                keterangan = "Kurang";
+                break;
+            case "E":
+                keterangan = "Sangat Kurang";
+                break;
+            default:
+                keterangan = "Nilai tidak valid";
+            }
+
+        document.write("<p>Nilai huruf " + nilaiHuruf + " diartikan sebagai: " + keterangan + "</p>");
+    </script>
+
+<h2> JavaScript dengan For Statement</h1>
+
+    <script>
+        // Mengalikan angka-angka dalam array
+        var numbers = [2, 3, 5, 7, 11];
+        var hasilKali = 1;
+
+        document.write("<p> Mengalikan angka-angka dalam array</p>");
+        for (var j = 0; j < numbers.length; j++) {
+            hasilKali *= numbers[j];
+        }
+
+        document.write("Hasil perkalian: " + hasilKali + "<br>");
+    </script>
+
+<h2> JavaScript dengan While dan Do-While</h1>
+
+    <script>
+        // Menghitung faktorial
+        var n = 5;
+        var faktorial = 1;
+        var i = 1;
+
+        document.write("<p> While: Menghitung faktorial dari " + n + "</p>");
+
+        while (i <= n) {
+            faktorial *= i;
+            i++;
+        }
+
+        document.write("<p>Faktorial dari " + n + " adalah: " + faktorial + "</p>");
+
+        // Menghitung jumlah angka dalam angka acak
+        var total = 0;
+        var angkaAcak;
+
+        document.write("<p> Do-While: Menghitung jumlah angka dalam angka acak</p>");
+
+        do {
+            angkaAcak = Math.floor(Math.random() * 10) + 1; // Menghasilkan angka acak antara 1 dan 10
+            total += angkaAcak;
+        } while (total < 20);
+
+        document.write("<p>Jumlah angka dalam angka acak yang melebihi 20 adalah: " + total + "</p>");
+    </script>
+
+<h2> JavaScript dengan Fungsi Kompleks</h1>
+
+    <script>
+        // Menghitung gaji karyawan
+        function hitungGaji(jabatan, jamKerja) {
+            var gajiPokok;
+            
+            if (jabatan === "Manager") {
+                gajiPokok = 5000;
+            } else if (jabatan === "Pegawai") {
+                gajiPokok = 3000;
+            } else {
+                gajiPokok = 2000;
+            }
+            
+            var bonus = jamKerja > 160 ? (jamKerja - 160) * 20 : 0;
+            var totalGaji = gajiPokok + bonus;
+            
+            return totalGaji;
+        }
+
+        // Data karyawan
+        var namaKaryawan = "John";
+        var jabatanKaryawan = "Manager";
+        var jamKerjaKaryawan = 180;
+
+        // Memanggil fungsi untuk menghitung gaji
+        var gajiKaryawan = hitungGaji(jabatanKaryawan, jamKerjaKaryawan);
+        
+        // Menampilkan hasil
+        document.write("<p>Nama: " + namaKaryawan + "</p>");
+        document.write("<p>Jabatan: " + jabatanKaryawan + "</p>");
+        document.write("<p>Jam Kerja: " + jamKerjaKaryawan + " jam</p>");
+        document.write("<p>Total Gaji: Rp " + gajiKaryawan + "</p>");
+    </script>
+
+</body>
+</html>
